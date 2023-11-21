@@ -17,6 +17,14 @@ class GetNumber(typing.Dict):
             return res
 
 class Shona(object):
+    """
+    The Shona class for translating numbers to shona strings::
+    >>> v = Shona (9000)
+    <[900]: mazana mapfumpamwe>
+    >>> str(Shona (9500))
+    <[9500]: zviuru zvipfumpamwe, nemazana mashanu>
+
+    """
     def __init__(self, numb, end=""):
         self.func_handler=GetNumber(zip(range (1,5),
             (self._humwe, self._hukumi, self._huzana, self._huru)))
@@ -132,5 +140,3 @@ class Shona(object):
                 return "churu"
             else:
                 return "zviuru"
-
-print(str (Shona (1999)))
